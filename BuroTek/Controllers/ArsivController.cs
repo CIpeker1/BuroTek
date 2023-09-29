@@ -67,7 +67,7 @@ namespace BuroTek.Controllers
                 return NoContent();
             }
 
-
+            //Ahmet was here
 
         }
     }
