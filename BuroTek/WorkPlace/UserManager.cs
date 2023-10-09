@@ -1,7 +1,9 @@
 ﻿using BuroTek.Core.DataAccess;
+using BuroTek.Core.Utilities.Results;
 using BuroTek.DataAccess;
-using BuroTek.Model;
+using BuroTek.Entities.Models;
 using BuroTek.WorkPlace.Abstract;
+using IResult = BuroTek.Core.Utilities.Results.IResult;
 
 namespace BuroTek.WorkPlace
 {
@@ -9,29 +11,26 @@ namespace BuroTek.WorkPlace
     {
         IUserDal _userDal;
 
-        public UserManager(IUserDal userDal)
-        {
-            _userDal = userDal;
-        }
-
-        public void Add(User user)
+        public IResult Add(User user)
         {
             _userDal.Add(user);
+            return new SuccessResult("Kullanıcı ekleme başarılı");
         }
 
-        public List<User> GetAll()
+        public IDataResult<List<User>> GetAll()
         {
-            return _userDal.GetAll();
+            return new SuccessDataResult<List<User>>(_userDal.GetAll(),"Kullanıcılar eklendi");
         }
 
-        public User GetById(string TcNo)
+        public IDataResult<User> GetById(string TcNo)
         {
-            return _userDal.Get(p => p.TcNo == TcNo);
+            return new SuccessDataResult<User>(_userDal.Get(u => u.TcNo == TcNo));
         }
 
-        public void Update(User user)
+        public IResult Update(User user)
         {
             _userDal.Update(user);
+            return new SuccessResult("Kullanıcı başarıyla güncellendi");
         }
     }
 }

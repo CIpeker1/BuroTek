@@ -1,6 +1,6 @@
 ﻿using BuroTek.Core.Entities;
 
-namespace BuroTek.Models
+namespace BuroTek.Entities.Models
 {
     public class Buro:IEntity
     {

@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
-using BuroTek.Dtos;
-using BuroTek.Mapper;
-using BuroTek.Model;
+using BuroTek.Entities.Dtos;
+using BuroTek.Entities.Entities.Dtos;
+using BuroTek.Entities.Models;
+using BuroTek.WorkPlace.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,65 +12,44 @@ namespace BuroTek.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly BuroContext _db;
-        private readonly IMapper _autoMapper;
-        private ActionResult<List<NotlarResponseModel>> userResponseModel;
-        private object _Dbcontext;
-
-        public UsersController(BuroContext db)
+        IUserService _userService;
+        public UsersController(IUserService userService)
         {
-            _db = db;
+            _userService = userService;
         }
-        [HttpGet]
-        public ActionResult<List<UserResponseModel>> Get()
+
+        [HttpGet("getall")]
+        public IActionResult Get()
         {
-            List<UserResponseModel> userResponseModel = new List<UserResponseModel>();
-            var result = _db.users.ToList();
-            if (result.Any())
+            var result = _userService.GetAll();
+            if (result.IsSuccess)
             {
                 return Ok(result);
             }
-            return NotFound();
+            return BadRequest(result);
         }
-        [HttpPost]
-        public async Task<IActionResult> Create(User user)
+        
+        [HttpGet("getbyid")]
+        public IActionResult Get(string TcNo)
         {
-            _db.users.Add(user);
-            await _db.SaveChangesAsync();
-            return Ok();
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, Notlar todo)
-        {
-            var existingTodo = _db.users.FirstOrDefault(t => t.UserId == id);
-            if (existingTodo == null)
+            var result = _userService.GetById(TcNo);
+            if (result.IsSuccess)
             {
-                return NotFound();
+                return Ok(result);
             }
-
-            existingTodo.AdSoyad = todo.AdSoyad;
-
-
-            return NoContent();
+            return BadRequest(result);
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        [HttpPost("add")]
+        public IActionResult post(User user)
         {
-            var todo = _db.users.FirstOrDefault(t => t.UserId == id);
-            if (todo == null)
+            var result = _userService.Add(user);
+            if (result.IsSuccess)
             {
-                return NotFound();
+                return Ok(result);
             }
-
-            _db.users.Remove(todo);
-
-            return NoContent();
-        }
-
-
-
+            return BadRequest(result);
+        }    
     }
 
 }

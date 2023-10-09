@@ -1,6 +1,5 @@
-﻿using BuroTek.Model;
-
-namespace BuroTek.Dtos
+﻿
+namespace BuroTek.Entities.Entities.Dtos
 {
     public class UserResponseModel
     {
@@ -20,8 +19,5 @@ namespace BuroTek.Dtos
         public DateTime KayitTarihi { get; set; }
         public string Not { get; set; }
         public string Baslik { get; set; }
-
-
-
     }
 }

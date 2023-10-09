@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using BuroTek.Dtos;
-using BuroTek.Model;
+using BuroTek.Entities.Dtos;
+using BuroTek.Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuroTek.Controllers
-{ 
+{
     [ApiController]
     [Route("api[controller]")]
     public class ArsivController : ControllerBase

@@ -1,8 +1,8 @@
 ﻿using BuroTek.Core.Entities;
 
-namespace BuroTek.Model
+namespace BuroTek.Entities.Models
 {
-    public class Notlar:IEntity
+    public class Notlar : IEntity
     {
         public int Id { get; set; }
         public string? AdSoyad { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace BuroTek.Dtos
+﻿namespace BuroTek.Entities.Dtos
 {
     public class BuroResponseModel
     {

@@ -1,8 +1,6 @@
-﻿using BuroTek.Core.Entities;
-
-namespace BuroTek.Models
+﻿namespace BuroTek.Entities.Dtos
 {
-    public class Arsiv:IEntity
+    public class ArsivResponseModel
     {
         public string DosyaAdi { get; set; }
         public string DosyaTuru { get; set; }

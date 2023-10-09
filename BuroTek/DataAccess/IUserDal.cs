@@ -1,5 +1,5 @@
 ﻿using BuroTek.Core.DataAccess;
-using BuroTek.Model;
+using BuroTek.Entities.Models;
 
 namespace BuroTek.DataAccess
 {

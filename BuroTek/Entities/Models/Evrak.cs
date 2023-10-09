@@ -1,8 +1,8 @@
 ﻿using BuroTek.Core.Entities;
 
-namespace BuroTek.Model
+namespace BuroTek.Entities.Models
 {
-    public class Evrak:IEntity
+    public class Evrak : IEntity
     {
         public int EvrakID { get; set; }
         public string? GeldigiGittigiKisi { get; set; }

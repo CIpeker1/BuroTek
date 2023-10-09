@@ -1,5 +1,5 @@
 
-using BuroTek.Model;
+using BuroTek.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 

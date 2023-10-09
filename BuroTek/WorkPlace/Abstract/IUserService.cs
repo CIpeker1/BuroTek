@@ -1,12 +1,14 @@
-﻿using BuroTek.Model;
+﻿using BuroTek.Core.Utilities.Results;
+using BuroTek.Entities.Models;
+using IResult = BuroTek.Core.Utilities.Results.IResult;
 
 namespace BuroTek.WorkPlace.Abstract
 {
     public interface IUserService
     {
-        List<User> GetAll();
-        User GetById(string TcNo);
-        void Add(User user);
-        void Update(User user);
+        IDataResult<List<User>> GetAll();
+        IDataResult<User> GetById(string TcNo);
+        IResult Add(User user);
+        IResult Update(User user);
     }
 }
