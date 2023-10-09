@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using BuroTek.Core.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BuroTek.Model
 {
-    public class User
+    public class User:IEntity
     {
         public int UserId { get; set; }
         public string KullaniciAdi { get; set; }

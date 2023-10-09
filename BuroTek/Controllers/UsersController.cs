@@ -32,9 +32,9 @@ namespace BuroTek.Controllers
             return NotFound();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Notlar todo)
+        public async Task<IActionResult> Create(User user)
         {
-            _db.Notlar.Add(todo);
+            _db.users.Add(user);
             await _db.SaveChangesAsync();
             return Ok();
         }
