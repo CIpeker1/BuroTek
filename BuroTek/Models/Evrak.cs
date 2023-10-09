@@ -1,6 +1,8 @@
-﻿namespace BuroTek.Model
+﻿using BuroTek.Core.Entities;
+
+namespace BuroTek.Model
 {
-    public class Evrak
+    public class Evrak:IEntity
     {
         public int EvrakID { get; set; }
         public string? GeldigiGittigiKisi { get; set; }

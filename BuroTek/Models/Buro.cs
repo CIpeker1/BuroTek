@@ -1,6 +1,8 @@
-﻿namespace BuroTek.Models
+﻿using BuroTek.Core.Entities;
+
+namespace BuroTek.Models
 {
-    public class Buro
+    public class Buro:IEntity
     {
         public int BuroId { get; set; }
         public string BuroAdi { get; set; }
