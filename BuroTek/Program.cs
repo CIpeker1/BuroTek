@@ -1,5 +1,6 @@
 
 using BuroTek.Entities.Models;
+using BuroTek.Entities.Models_0;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -13,6 +14,8 @@ namespace BuroTek
 
             var builder = WebApplication.CreateBuilder(args);
 
+            
+
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
@@ -24,7 +27,7 @@ namespace BuroTek
             });
             // Add services to the container.
             builder.Services.AddControllers();
-            builder.Services.AddDbContext<BuroContext>(opt =>
+            builder.Services.AddDbContext<BurotekDbContext>(opt =>
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("MYDB"));
             });
