@@ -6,9 +6,9 @@ namespace BuroTek.WorkPlace.Abstract
 {
     public interface IUserService
     {
-        IDataResult<List<User>> GetAll();
-        IDataResult<User> GetById(string TcNo);
-        IResult Add(User user);
-        IResult Update(User user);
+        //IDataResult<List<User>> GetAll();
+        //IDataResult<User> GetById(string TcNo);
+        //IResult Add(User user);
+        //IResult Update(User user);
     }
 }

@@ -1,6 +1,4 @@
-
 using BuroTek.Entities.Models;
-using BuroTek.Entities.Models_0;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -27,7 +25,7 @@ namespace BuroTek
             });
             // Add services to the container.
             builder.Services.AddControllers();
-            builder.Services.AddDbContext<BurotekDbContext>(opt =>
+            builder.Services.AddDbContext<BuroContext>(opt =>
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("MYDB"));
             });

@@ -9,28 +9,28 @@ namespace BuroTek.WorkPlace
 {
     public class UserManager : IUserService
     {
-        IUserDal _userDal;
+        //IUserDal _userDal;
 
-        public IResult Add(User user)
-        {
-            _userDal.Add(user);
-            return new SuccessResult("Kullanıcı ekleme başarılı");
-        }
+        //public IResult Add(User user)
+        //{
+        //    _userDal.Add(user);
+        //    return new SuccessResult("Kullanıcı ekleme başarılı");
+        //}
 
-        public IDataResult<List<User>> GetAll()
-        {
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(),"Kullanıcılar eklendi");
-        }
+        //public IDataResult<List<User>> GetAll()
+        //{
+        //    return new SuccessDataResult<List<User>>(_userDal.GetAll(),"Kullanıcılar eklendi");
+        //}
 
-        public IDataResult<User> GetById(string TcNo)
-        {
-            return new SuccessDataResult<User>(_userDal.Get(u => u.TcNo == TcNo));
-        }
+        //public IDataResult<User> GetById(string TcNo)
+        //{
+        //    return new SuccessDataResult<User>(_userDal.Get(u => u.TcNo == TcNo));
+        //}
 
-        public IResult Update(User user)
-        {
-            _userDal.Update(user);
-            return new SuccessResult("Kullanıcı başarıyla güncellendi");
-        }
+        //public IResult Update(User user)
+        //{
+        //    _userDal.Update(user);
+        //    return new SuccessResult("Kullanıcı başarıyla güncellendi");
+        //}
     }
 }

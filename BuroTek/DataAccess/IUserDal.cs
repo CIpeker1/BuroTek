@@ -3,8 +3,8 @@ using BuroTek.Entities.Models;
 
 namespace BuroTek.DataAccess
 {
-    public interface IUserDal:IEntityRepository<User>
-    {
+    //public interface IUserDal:IEntityRepository<>
+    //{
 
-    }
+    //}
 }
